@@ -1,11 +1,4 @@
-<?php
-$dir = new DirectoryIterator(dirname(__FILE__));
-foreach ($dir as $fileinfo) {
-    if (!$fileinfo->isDot()) {
-        var_dump($fileinfo->getFilename());
-    }
-}
-?>
+
 
 <html>
 
@@ -16,10 +9,17 @@ foreach ($dir as $fileinfo) {
 <body>
 
     <?php
-    $dir = new DirectoryIterator(dirname(__FILE__));
+    $dir = new DirectoryIterator("posts");
     foreach ($dir as $fileinfo) {
         if (!$fileinfo->isDot()) {
-            echo($fileinfo->getFilename());
+
+
+
+            $fileName = $fileinfo->getPathname();
+            echo($fileName);
+            $myFile = fopen($fileName,"r");
+            echo "File Contents:" . fread($myFile,filesize($fileName))."<br>";
+            fclose($myFile);
         }
     }
     ?>
