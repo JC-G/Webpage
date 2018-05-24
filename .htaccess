@@ -1,0 +1,7 @@
+
+# HTID:5478241: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:5478241:
+#Alternate default index page
+DirectoryIndex test.php
+Options -Indexes
