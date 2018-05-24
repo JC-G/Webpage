@@ -10,21 +10,7 @@
 </head>
 <body onload = "init();">
 <canvas id="my-canvas"></canvas>
-    <?php
-    $dir = new DirectoryIterator("posts");
-    foreach ($dir as $fileinfo) {
-        if (!$fileinfo->isDot()) {
-
-
-
-            $fileName = $fileinfo->getPathname();
-            echo($fileName);
-            $myFile = fopen($fileName,"r");
-            echo "File Contents:" . fread($myFile,filesize($fileName))."<br>";
-            fclose($myFile);
-        }
-    }
-    ?>
+    
     <!--
         we want to put each post in a box and display it
     -->
